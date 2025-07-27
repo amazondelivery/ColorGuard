@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Decoloring",
+    "version": "1.0",
+    "description": "Decolors websites that are meant to grab your attention. Makes the internet less addictive.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "images/icon.png"
+    },
+    "permissions": ["tabs", "activeTab", "scripting", "storage"],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "icons": {
+        "128": "images/icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}

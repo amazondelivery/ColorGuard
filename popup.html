@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popup</title>
+  <style>
+    body {
+      min-width: 200px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+    #settings {
+        margin: 5px;
+    }
+    #feedback {
+        margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Thank you for using Decoloring!</h3>
+  <h4>You are using version 1.0</h5>
+  <button id="settings">Settings</button>
+  <button id="feedback">Send Feedback</button>
+  <div id="settingsPage" style="display: none;">
+    <hr style="width: 90%; margin-top: 5px; border: 1px solid #000000;" />
+    <p style="text-align:center;font-size:15px;text-decoration:underline">Settings</p>
+    
+    <label style="margin-bottom:7px; display:inline-block;" for="grayscaleIntensity">
+    Intensity:
+    <input type="range" id="grayscaleIntensity" min="0" max="100" value="100" />
+    </label> 
+
+    <label style="margin-bottom:7px; display:inline-block;" for="lockSettings">
+        Lock Settings
+        <select id="lockSettings" name="lockSettings">
+            <option value="0">0s</option>
+            <option value="10">10s</option>
+            <option value="20">20s</option>
+            <option value="30">30s</option>
+        </select>
+        <p>This setting takes effect immediately after closing this window. Careful!</p>
+    </label>
+
+    <div style="margin-top:5px">
+        <p>Decolored sites:</p>
+        <textarea id="siteList" rows="5" style="resize: vertical; overflow:auto;">
+
+        </textarea>
+    </div>   
+    
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
