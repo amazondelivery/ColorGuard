@@ -1,0 +1,1 @@
+Companies have spent millions of dollars to engineer their websites to grab your attention. Bombarding you in saturated colors and sensory overload can hijack your focus. Install Decolored to make your internet experience calm and intentional.
