@@ -1,18 +1,26 @@
-let isSettingsVisible = false;
-const settingsButton = document.getElementById("settings");
+let isSettingsVisible = false;const settingsButton = document.getElementById("settings");
 const settingsPage = document.getElementById("settingsPage");
 const siteList = document.getElementById("siteList");
+const saveButton = document.getElementById("saveSites");
 
 chrome.storage.local.get("grayscaleSites", (result) => {
     const sites = result.grayscaleSites;
-    
-    if (sites && Array.isArray(sites)) {
-        sites.forEach((site) => {
 
-        });
+    if (sites && Array.isArray(sites)) {
+        siteList.value = sites.join('\n');
     } else {
         
     }
+});
+
+saveButton.addEventListener('click', () => {
+    const updatedSiteList = siteList.value
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line !== '');
+    chrome.storage.local.set({ grayscaleSites: updatedSiteList }, () => {
+        console.log("Grayscale sites saved on update");
+    });
 });
 
 settingsButton.addEventListener('click', () => {
