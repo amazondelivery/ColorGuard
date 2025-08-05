@@ -49,4 +49,5 @@ chrome.runtime.onInstalled.addListener((details) => {
             console.log("Grayscale sites saved on first install");
         });
     }
+    chrome.storage.local.set({ countdownSetting: 0 }, () => {});
 })
