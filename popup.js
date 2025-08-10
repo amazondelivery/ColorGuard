@@ -66,8 +66,7 @@ saveButton.addEventListener('click', () => {
 // Lock Settings Picker
 lockSettingsPicker.addEventListener('change', function() {
     chrome.storage.local.set({"countdownSetting": this.value});
-});
-
+}); 
 
 
 // Feedback
